@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kata Koran — Word Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Special+Elite&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="grain-overlay"></div>
+
+    <!-- Newspaper stack — pages layered on top of each other -->
+    <div id="newspaper-stack">
+
+        <!-- TITLE SCREEN — newspaper front page -->
+        <div id="screen-title" class="screen" data-layer="2">
+            <header class="fp-masthead">
+                <div class="fp-dateline">
+                    <span>Vol. I, No. 1</span>
+                    <span>Jakarta, Indonesia</span>
+                    <span>Edisi Khusus</span>
+                </div>
+                <div class="fp-rule thick"></div>
+                <h1 class="fp-title">Kata Koran</h1>
+                <div class="fp-tagline">The Indonesian&ndash;English Word Game &bull; Est. 2026</div>
+                <div class="fp-rule thick"></div>
+            </header>
+
+            <div class="fp-body">
+                <!-- Left column — filler -->
+                <aside class="fp-col fp-col-side">
+                    <div class="fp-article fp-filler">
+                        <h4>Markets Report Steady Growth Across Region</h4>
+                        <p>The committee reported yesterday that preliminary findings indicate substantial progress in the ongoing infrastructure development project across the metropolitan area residents expressed cautious optimism about continued expansion of key sectors officials say further review is warranted before any final conclusions may be drawn from the available evidence gathered during the previous fiscal quarter</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <div class="fp-photo"></div>
+                        <p>Agricultural output has increased by an estimated twelve percent over the corresponding period last year according to officials at the national bureau of statistics who noted favorable conditions contributed to the record yields in several provinces across the archipelago government subsidies played a role</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <h4>New Bridge Opens Ahead of Schedule</h4>
+                        <p>Representatives from neighboring districts convened to discuss the proposed amendments to the existing regulatory framework governing commercial activities along the southern corridor transportation authorities have expressed satisfaction with the pace of construction and anticipate completion of the remaining phases within the originally projected timeline barring further delays</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <h4>Public Transit Ridership Up</h4>
+                        <p>Municipal transit authorities have recorded a notable increase in daily ridership figures following the introduction of expanded service routes and reduced fare structures aimed at encouraging adoption among suburban commuters who previously relied on private vehicles for their daily journeys into the central business district</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <p>Investigators continue to assess the extent of recent flooding in the eastern lowlands where several communities reported significant property damage and disruption to essential services local emergency coordinators have mobilized response teams</p>
+                    </div>
+                </aside>
+
+                <!-- Center column — real content -->
+                <article class="fp-col fp-col-main">
+                    <h2 class="fp-headline">Translate Words, Master Language</h2>
+                    <div class="fp-rule thin"></div>
+                    <p class="fp-lead drop-cap">Master the art of translation! Indonesian words await&mdash;spell their English meanings by picking the scattered letters in the correct order. From simple words to challenging vocabulary, prove your linguistic prowess across multiple editions of the Kata Koran.</p>
+                    <button id="btn-start" class="paper-btn">&#9758; Begin Reading</button>
+                    <div class="edition-select">
+                        <span class="edition-label">Select Edition:</span>
+                        <div class="edition-options">
+                            <button class="edition-btn active" data-difficulty="easy">Morning<br><small>Easy</small></button>
+                            <button class="edition-btn" data-difficulty="medium">Afternoon<br><small>Medium</small></button>
+                            <button class="edition-btn" data-difficulty="hard">Evening<br><small>Hard</small></button>
+                        </div>
+                    </div>
+                    <div class="fp-rule thin" style="width:100%"></div>
+                    <div class="fp-main-filler">
+                        <p>Continued reports suggest that language proficiency examinations conducted across the territory have yielded encouraging results among participants of varying experience levels officials from the bureau of educational assessment have noted marked improvements in comprehension and recall particularly within the intermediate category where scores have risen by a significant margin over the preceding quarter</p>
+                        <p>Additional programming is expected to be announced in the coming weeks as organizers finalize arrangements for the expanded curriculum initiative which aims to broaden access to multilingual resources throughout the region educators expressed enthusiasm about the potential for wider community engagement</p>
+                        <p>The ministry of education has allocated supplementary funding for schools participating in the pilot program which provides bilingual teaching materials developed in partnership with international language research institutions several districts have already reported increased enrollment in elective language courses offered at both primary and secondary levels</p>
+                        <p>Survey data collected from participants in the most recent cohort indicates that gamified learning approaches demonstrate measurably higher retention rates compared to traditional methods with students reporting greater motivation and sustained engagement over the full duration of the assessment period according to published findings</p>
+                    </div>
+                </article>
+
+                <!-- Right column — filler -->
+                <aside class="fp-col fp-col-side">
+                    <div class="fp-article fp-filler">
+                        <h4>Weather: Clear Skies Expected Through Week</h4>
+                        <p>Meteorological bureau forecasts indicate a sustained period of favorable conditions throughout the coming week temperatures expected to remain within seasonal averages with minimal precipitation forecast for the greater metropolitan region and surrounding areas residents are advised to take advantage of the conditions</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <h4>Cultural Festival Draws Record Attendance</h4>
+                        <p>Annual celebrations draw visitors from across the region with traditional performances and exhibitions featuring local artisans and musicians from more than thirty provinces the event continues through the weekend with additional programming scheduled for the closing ceremonies</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <div class="fp-photo"></div>
+                        <p>Continuing coverage of developments in the educational sector reveals significant trends in language learning adoption rates among younger demographics researchers attribute the shift to increased availability of digital resources and gamified platforms designed to improve engagement</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <h4>Harbor Expansion Approved</h4>
+                        <p>City council members voted unanimously to approve the proposed harbor expansion project which will add capacity for an additional forty vessels and create hundreds of jobs in the maritime and logistics sectors according to preliminary economic impact assessments conducted by the regional development authority</p>
+                    </div>
+                    <div class="fp-rule thin"></div>
+                    <div class="fp-article fp-filler">
+                        <p>Health officials announced the successful rollout of the community wellness initiative reaching more than fifteen thousand households across the district preliminary data suggests positive reception among residents who participated in the voluntary screening programs offered at neighborhood centers throughout the month</p>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Bottom filler row -->
+            <div class="fp-bottom">
+                <div class="fp-article fp-filler">
+                    <h4>Opinion: Language Education</h4>
+                    <p>Scholars argue that bilingual education provides cognitive benefits that extend well beyond simple communication skills according to researchers at the national university who published findings this quarter demonstrating measurable differences in problem solving ability and working memory capacity among bilingual students compared to monolingual peers of similar age</p>
+                </div>
+                <div class="fp-article fp-filler">
+                    <h4>Commerce &amp; Trade</h4>
+                    <p>Commerce report indicates favorable trading conditions with regional partners as new agreements take effect beginning next quarter sources confirm additional negotiations are already underway with neighboring economies officials remain optimistic about prospects for sustained growth in the export sector particularly in manufactured goods and processed agricultural products</p>
+                </div>
+                <div class="fp-article fp-filler">
+                    <h4>Sports: Weekend Results</h4>
+                    <p>Fixtures saw unexpected results across several divisions with defending champions facing setbacks in key matches that could affect standings as the season enters its final stretch before the playoffs supporters expressed mixed reactions to the coaching changes announced midweek which many believe contributed to the disappointing performance</p>
+                </div>
+            </div>
+
+            <footer class="fp-footer">Established 2026 &bull; Kata Koran &bull; Jakarta, Indonesia</footer>
+        </div>
+
+        <!-- GAME SCREEN -->
+        <div id="screen-game" class="screen" data-layer="1">
+            <div class="game-header">
+                <div class="header-left">
+                    <span class="header-edition" id="game-edition">Morning Edition</span>
+                    <span class="header-level" id="game-level">Word 1 / 10</span>
+                </div>
+                <div class="header-center">
+                    <span class="header-score-label">Score</span>
+                    <span class="header-score" id="game-score">0</span>
+                </div>
+                <div class="header-right">
+                    <div class="timer-display" id="game-timer">
+                        <svg class="timer-ring" viewBox="0 0 36 36">
+                            <circle class="timer-bg" cx="18" cy="18" r="16"/>
+                            <circle class="timer-fg" id="timer-circle" cx="18" cy="18" r="16"/>
+                        </svg>
+                        <span class="timer-text" id="timer-text">30</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-body">
+                <!-- Spelling bar -->
+                <div class="spelling-bar" id="spelling-bar">
+                    <div class="spelling-slots" id="spelling-slots"></div>
+                    <div class="spelling-hint" id="spelling-hint">click letters below to spell the English word</div>
+                </div>
+
+                <!-- Play area: scattered letters around center word -->
+                <div class="play-area" id="play-area">
+                    <div class="indo-card" id="indo-card">
+                        <div class="card-inner" id="card-inner">
+                            <div class="card-word" id="indo-word">kucing</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-footer">
+                <button class="paper-btn small" id="btn-hint">Reveal</button>
+                <button class="paper-btn small" id="btn-skip">Skip &#9654;</button>
+                <button class="paper-btn small" id="btn-quit">&#10006; Quit</button>
+            </div>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="screen-result" class="screen" data-layer="0">
+            <div class="result-paper">
+                <div class="result-stamp" id="result-stamp">COMPLETE</div>
+                <h2 class="result-headline" id="result-headline">EXTRA! EXTRA!</h2>
+                <div class="result-subhead" id="result-subhead">Edition Complete</div>
+                <div class="result-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Final Score</span>
+                        <span class="stat-value" id="result-score">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Words Solved</span>
+                        <span class="stat-value" id="result-solved">0 / 10</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Accuracy</span>
+                        <span class="stat-value" id="result-accuracy">0%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Best Streak</span>
+                        <span class="stat-value" id="result-streak">0</span>
+                    </div>
+                </div>
+                <div class="result-words" id="result-words"></div>
+                <div class="result-actions">
+                    <button class="paper-btn" id="btn-replay">&#8634; Read Again</button>
+                    <button class="paper-btn" id="btn-home">&#9758; Front Page</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="words.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
