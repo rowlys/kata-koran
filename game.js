@@ -11,6 +11,7 @@
         gameScore: $('#game-score'),
         timerCircle: $('#timer-circle'),
         timerText: $('#timer-text'),
+        spellingBarInner: $('#spelling-bar-inner'),
         spellingSlots: $('#spelling-slots'),
         spellingHint: $('#spelling-hint'),
         indoWord: $('#indo-word'),
@@ -222,6 +223,7 @@
         els.gameLevel.textContent = `Word ${currentIndex + 1} / ${words.length}`;
         els.indoWord.textContent = currentWord.id;
         els.cardInner.style.clipPath = generateTornClipPath();
+        els.spellingBarInner.style.clipPath = generateTornClipPath();
         els.spellingHint.textContent = 'click the scattered letters to spell the English word';
 
         renderSlots();
@@ -273,7 +275,8 @@
 
     function generateDecoyLetters(word, diff) {
         const counts = { easy: 2, medium: 4, hard: 6 };
-        const count = counts[diff] || 2;
+        let count = counts[diff] || 2;
+        if (window.innerWidth <= 650) count = Math.max(count - 2, 1);
         const alphabet = 'abcdefghijklmnopqrstuvwxyz';
         const decoys = [];
         for (let i = 0; i < count; i++) {
@@ -342,10 +345,14 @@
                 x = Math.max(2, Math.min(aW - tileW - 2, x));
                 y = Math.max(2, Math.min(aH - tileH - 2, y));
 
-                const dx = (x + tileW / 2) - cx;
-                const dy = (y + tileH / 2) - cy;
+                const tileCx = x + tileW / 2;
+                const tileCy = y + tileH / 2;
+                const overlapsCard = Math.abs(tileCx - cx) < halfCardW + tileW / 2 &&
+                                     Math.abs(tileCy - cy) < halfCardH + tileH / 2;
+                const dx = tileCx - cx;
+                const dy = tileCy - cy;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist > bestDist && !hasOverlap(x, y, tileW, tileH, placed)) {
+                if (dist > bestDist && !overlapsCard && !hasOverlap(x, y, tileW, tileH, placed)) {
                     bestDist = dist;
                     bestX = x;
                     bestY = y;
