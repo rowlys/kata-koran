@@ -191,20 +191,10 @@
         resetStack();
     });
     els.btnCredits.addEventListener('click', () => {
-        creditsScreen.classList.add('visible', 'active', 'flip-in');
-        creditsScreen.addEventListener('animationend', function onDone(e) {
-            if (e.animationName !== 'pageFlipIn') return;
-            creditsScreen.removeEventListener('animationend', onDone);
-            creditsScreen.classList.remove('flip-in');
-        });
+        creditsScreen.classList.add('open');
     });
     els.btnCreditsBack.addEventListener('click', () => {
-        creditsScreen.classList.add('flip-out');
-        creditsScreen.addEventListener('animationend', function onDone(e) {
-            if (e.animationName !== 'pageFlipOut') return;
-            creditsScreen.removeEventListener('animationend', onDone);
-            creditsScreen.classList.remove('flip-out', 'active', 'visible');
-        });
+        creditsScreen.classList.remove('open');
     });
     els.btnQuit.addEventListener('click', () => {
         stopTimer();

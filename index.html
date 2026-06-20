@@ -9,7 +9,6 @@
 </head>
 <body>
     <div id="grain-overlay"></div>
-    <button id="btn-music" class="music-toggle" title="Toggle music">&#9835;</button>
 
     <!-- Newspaper stack — pages layered on top of each other -->
     <div id="newspaper-stack">
@@ -125,41 +124,6 @@
             </div>
 
             <footer class="fp-footer">Established 2026 &bull; Kata Koran &bull; Jakarta, Indonesia</footer>
-        </div>
-
-        <!-- CREDITS SCREEN -->
-        <div id="screen-credits" class="screen" data-layer="3">
-            <div class="credits-paper">
-                <div class="fp-rule thick"></div>
-                <h2 class="credits-title">Credits</h2>
-                <div class="fp-rule thick"></div>
-
-                <div class="credits-section">
-                    <h3 class="credits-heading">Development Team</h3>
-                    <div class="credits-member">
-                        <span class="credits-name">Nadine Angela Joelita Irawan</span>
-                        <span class="credits-email">nadineirawan2005@gmail.com</span>
-                    </div>
-                    <div class="credits-member">
-                        <span class="credits-name">Basten Andika Salim</span>
-                        <span class="credits-email">salimbasten@gmail.com</span>
-                    </div>
-                </div>
-
-                <div class="fp-rule thin"></div>
-
-                <div class="credits-section">
-                    <h3 class="credits-heading">Music</h3>
-                    <div class="credits-item">
-                        <span class="credits-track">&ldquo;Study and Relax&rdquo;</span>
-                        <span class="credits-source">by Kevin MacLeod (incompetech.com)</span>
-                    </div>
-                </div>
-
-                <div class="fp-rule thin"></div>
-
-                <button class="paper-btn" id="btn-credits-back">&#9758; Back to Front Page</button>
-            </div>
         </div>
 
         <!-- GAME SCREEN -->
@@ -309,6 +273,43 @@
         </div>
 
     </div>
+
+    <!-- CREDITS OVERLAY (outside newspaper stack) -->
+    <div id="screen-credits" class="credits-overlay">
+        <div class="credits-paper">
+            <div class="fp-rule thick"></div>
+            <h2 class="credits-title">Credits</h2>
+            <div class="fp-rule thick"></div>
+
+            <div class="credits-section">
+                <h3 class="credits-heading">Development Team</h3>
+                <div class="credits-member">
+                    <span class="credits-name">Nadine Angela Joelita Irawan</span>
+                    <span class="credits-email">nadineirawan2005@gmail.com</span>
+                </div>
+                <div class="credits-member">
+                    <span class="credits-name">Basten Andika Salim</span>
+                    <span class="credits-email">salimbasten@gmail.com</span>
+                </div>
+            </div>
+
+            <div class="fp-rule thin"></div>
+
+            <div class="credits-section">
+                <h3 class="credits-heading">Music</h3>
+                <div class="credits-item">
+                    <span class="credits-track">&ldquo;Study and Relax&rdquo;</span>
+                    <span class="credits-source">by Kevin MacLeod (incompetech.com)</span>
+                </div>
+            </div>
+
+            <div class="fp-rule thin"></div>
+
+            <button class="paper-btn" id="btn-credits-back">&#9758; Back to Front Page</button>
+        </div>
+    </div>
+
+    <button id="btn-music" class="music-toggle" title="Toggle music">&#9835;</button>
 
     <script src="words.js"></script>
     <script src="game.js"></script>

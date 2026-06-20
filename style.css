@@ -1067,13 +1067,24 @@ body {
     100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
 }
 
-/* ===== CREDITS SCREEN ===== */
-#screen-credits {
-    padding: 40px 20px;
+/* ===== CREDITS OVERLAY ===== */
+.credits-overlay {
+    position: fixed;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 9000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.credits-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 .credits-paper {
     max-width: 480px;
