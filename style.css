@@ -1066,3 +1066,104 @@ body {
     60% { transform: translate(-50%, -50%) scale(1.1) rotate(2deg); }
     100% { transform: translate(-50%, -50%) scale(1) rotate(0deg); }
 }
+
+/* ===== CREDITS SCREEN ===== */
+#screen-credits {
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+.credits-paper {
+    max-width: 480px;
+    width: 100%;
+    background: var(--paper-light);
+    border: 1px solid var(--ink-faded);
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 12px 40px var(--shadow);
+    position: relative;
+}
+.credits-paper::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid var(--ink-faded);
+    pointer-events: none;
+}
+.credits-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 8px 0;
+}
+.credits-section {
+    margin: 24px 0;
+    text-align: left;
+}
+.credits-heading {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: italic;
+}
+.credits-member {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--ink-faded);
+}
+.credits-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+.credits-email {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+}
+.credits-item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+}
+.credits-track {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+.credits-source {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+}
+
+/* ===== MUSIC TOGGLE ===== */
+.music-toggle {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    z-index: 9998;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--ink-faded);
+    background: var(--paper-light);
+    color: var(--ink);
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px var(--shadow);
+    transition: background 0.2s, color 0.2s;
+    font-family: serif;
+    line-height: 1;
+}
+.music-toggle:hover {
+    background: var(--ink);
+    color: var(--paper-light);
+}
+.music-toggle.muted {
+    opacity: 0.5;
+}

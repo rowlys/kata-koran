@@ -3,6 +3,7 @@
     const $$ = (sel) => document.querySelectorAll(sel);
 
     const screens = { title: $('#screen-title'), game: $('#screen-game'), result: $('#screen-result') };
+    const creditsScreen = $('#screen-credits');
     const els = {
         btnStart: $('#btn-start'),
         editionBtns: $$('.edition-btn'),
@@ -31,7 +32,33 @@
         resultWords: $('#result-words'),
         btnReplay: $('#btn-replay'),
         btnHome: $('#btn-home'),
+        btnCredits: $('#btn-credits'),
+        btnCreditsBack: $('#btn-credits-back'),
     };
+
+    // ===== BACKGROUND MUSIC =====
+    const bgm = new Audio('assets/bgm.mp3');
+    bgm.loop = true;
+    bgm.volume = 0.35;
+    let musicStarted = false;
+    let musicMuted = false;
+    const btnMusic = $('#btn-music');
+
+    function startMusic() {
+        if (musicStarted) return;
+        musicStarted = true;
+        bgm.play().catch(() => {});
+    }
+
+    document.addEventListener('click', () => startMusic(), { once: true });
+    document.addEventListener('keydown', () => startMusic(), { once: true });
+
+    btnMusic.addEventListener('click', () => {
+        musicMuted = !musicMuted;
+        bgm.muted = musicMuted;
+        btnMusic.classList.toggle('muted', musicMuted);
+        btnMusic.textContent = musicMuted ? '♭' : '♫';
+    });
 
     let difficulty = 'easy';
     let words = [];
@@ -162,6 +189,22 @@
     });
     els.btnHome.addEventListener('click', () => {
         resetStack();
+    });
+    els.btnCredits.addEventListener('click', () => {
+        creditsScreen.classList.add('visible', 'active', 'flip-in');
+        creditsScreen.addEventListener('animationend', function onDone(e) {
+            if (e.animationName !== 'pageFlipIn') return;
+            creditsScreen.removeEventListener('animationend', onDone);
+            creditsScreen.classList.remove('flip-in');
+        });
+    });
+    els.btnCreditsBack.addEventListener('click', () => {
+        creditsScreen.classList.add('flip-out');
+        creditsScreen.addEventListener('animationend', function onDone(e) {
+            if (e.animationName !== 'pageFlipOut') return;
+            creditsScreen.removeEventListener('animationend', onDone);
+            creditsScreen.classList.remove('flip-out', 'active', 'visible');
+        });
     });
     els.btnQuit.addEventListener('click', () => {
         stopTimer();
